@@ -27,5 +27,20 @@ arr[$i]=${results[$i]}
 ((i++))
 done
 
-echo "Array :" ${arr[@]}
+size=${#arr[@]}
+for (( i=0; i<=$size; i++ ))
+do
+for (( j=$i; j<=$size; j++ ))
+do
+if [[ ${arr[i]} -lt ${arr[j]} ]]
+then
+temp=${arr[i]}
+arr[i]=${arr[j]}
+arr[j]=$temp
+fi
+done
+done
 
+
+echo "Array :" ${arr[@]}
+echo "descending Order = " ${arr[@]}
