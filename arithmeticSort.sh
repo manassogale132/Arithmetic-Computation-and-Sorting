@@ -8,3 +8,4 @@ read -p "Enter the value b = " b
 read -p "Enter the value c = " c
 
 no1=`expr $a + $b \* $c`
+no2=`expr $a \* $b + $c`
